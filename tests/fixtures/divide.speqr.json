@@ -1,0 +1,34 @@
+{
+  "name": "Divide",
+  "inputs": [
+    {
+      "name": "numerator",
+      "vtype": "Real",
+      "sumo": "RealNumber"
+    },
+    {
+      "name": "denominator",
+      "vtype": "Real",
+      "sumo": "RealNumber"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "vtype": "Real",
+      "sumo": "RealNumber"
+    }
+  ],
+  "preconditions": [
+    {
+      "expression": "denominator != 0"
+    }
+  ],
+  "postconditions": [
+    {
+      "expression": "result * denominator == numerator"
+    }
+  ],
+  "causal_assertions": [],
+  "references": []
+}
