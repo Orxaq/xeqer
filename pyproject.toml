@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xeqer"
+version = "0.0.1"
+description = "How you prove your code actually does it"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Steven Devisch"}]
+requires-python = ">=3.12"
+dependencies = [
+    "speqr>=0.1.0",
+    "z3-solver>=4.12.0",
+    "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov", "ruff>=0.15.1"]
+
+[project.scripts]
+xeqer = "xeqer.cli:app"
+
+[project.urls]
+Repository = "https://github.com/Orxaq/xeqer"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
